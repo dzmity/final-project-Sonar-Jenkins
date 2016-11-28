@@ -17,7 +17,7 @@ import java.util.concurrent.Executor;
  */
 public class WrapperConnector {
 
-    private final static Logger LOG = LogManager.getLogger();
+    private static final Logger LOG = LogManager.getLogger();
     private Connection connection;
 
     WrapperConnector(Connection connection ) {
@@ -29,7 +29,7 @@ public class WrapperConnector {
         try {
             connection.close();
         } catch (SQLException e) {
-            LOG.error("Connection was closed with exception. ");
+            LOG.error("Connection was closed with exception. ", e);
         }
     }
 

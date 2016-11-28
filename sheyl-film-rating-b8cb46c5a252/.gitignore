@@ -1,0 +1,8 @@
+/target/
+/RemoteSystemsTempFiles/
+/.idea/
+/lib/
+/.sonar/
+/.settings/
+/.metadata/
+
