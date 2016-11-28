@@ -27,21 +27,21 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ConnectionPool {
 
-    private final static Logger LOG = LogManager.getLogger();
-    private final static String CONFIG_PATH = "config";
-    private final static String URL = "database.url";
-    private final static String USER = "user";
-    private final static String PASSWORD = "password";
-    private final static String USE_UNICODE = "useUnicode";
-    private final static String CHARACTER_ENCODING = "characterEncoding";
-    private final static String POOL_SIZE = "database.pool.size";
-    private final static String CHECK__EXCEPTION_TIME = "database.checkingExceptionCount";
-    private final static String CHECKING_TIME = "database.checkingTime";
-    private final static String DEFAULT_USE_UNICODE = "true";
-    private final static String DEFAULT_CHARACTER_ENCODING = "UTF-8";
-    private final static int DEFAULT_POOL_SIZE = 20;
-    private final static int DEFAULT_CHECKING_TIME = 2;
-    private final static int DEFAULT_EXCEPTION_COUNT = 4;
+    private static final Logger LOG = LogManager.getLogger();
+    private static final String CONFIG_PATH = "config";
+    private static final String URL = "database.url";
+    private static final String USER = "user";
+    private static final String PASSWORD = "password";
+    private static final String USE_UNICODE = "useUnicode";
+    private static final String CHARACTER_ENCODING = "characterEncoding";
+    private static final String POOL_SIZE = "database.pool.size";
+    private static final String CHECK__EXCEPTION_TIME = "database.checkingExceptionCount";
+    private static final String CHECKING_TIME = "database.checkingTime";
+    private static final String DEFAULT_USE_UNICODE = "true";
+    private static final String DEFAULT_CHARACTER_ENCODING = "UTF-8";
+    private static final int DEFAULT_POOL_SIZE = 20;
+    private static final int DEFAULT_CHECKING_TIME = 2;
+    private static final int DEFAULT_EXCEPTION_COUNT = 4;
 
     private static Properties databaseProperties;
     private static String databaseUrl;
