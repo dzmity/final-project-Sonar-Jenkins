@@ -24,7 +24,7 @@ public class DirectorDAOImpl extends DirectorDAO {
     private static final String PHOTO_PATH = "photo_path";
     private static final String COUNTRY = "country";
 
-    private final static String SQL_SELECT_ALL = "SELECT director.director_id, director.name, director.surname, director.photo_path, " +
+    private static final String SQL_SELECT_ALL = "SELECT director.director_id, director.name, director.surname, director.photo_path, " +
             " country.country FROM database1.director NATURAL JOIN country";
     private static final String SQL_CREATE_DIRECTOR = "INSERT INTO database1.director (name, surname, photo_path, country_id)" +
             " VALUES (?, ?, ?, ?)";
