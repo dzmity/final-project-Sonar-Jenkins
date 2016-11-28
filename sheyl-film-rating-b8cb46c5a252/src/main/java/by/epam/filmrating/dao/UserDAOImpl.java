@@ -5,7 +5,6 @@ import by.epam.filmrating.entity.Status;
 import by.epam.filmrating.entity.User;
 import by.epam.filmrating.exception.DAOException;
 import by.epam.filmrating.util.ActionEvaluator;
-import by.epam.filmrating.pool.ConnectionPool;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
