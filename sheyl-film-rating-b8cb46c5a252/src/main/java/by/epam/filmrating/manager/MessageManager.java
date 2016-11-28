@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
  */
 public class MessageManager {
 
-    private final static Logger LOG = LogManager.getLogger();
+	private static final Logger LOG = LogManager.getLogger();
     private static final String LINK = "message";
 
     private MessageManager() {
