@@ -1,8 +1,11 @@
-/target/
-/RemoteSystemsTempFiles/
-/.idea/
-/lib/
-/.sonar/
-/.settings/
-/.metadata/
+/target/*
+/RemoteSystemsTempFiles/*
+/.idea/*
+/lib/*
+/.sonar/*
+/.settings/*
+/.metadata/*
+/.project
+/.classpath
+/sonar-project.properties
 
