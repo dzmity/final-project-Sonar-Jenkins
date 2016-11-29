@@ -12,19 +12,19 @@ import java.util.regex.Pattern;
  */
 public class FilmRatingRegEx {
 
-    public final static String GREEDY_SPACES = "\\s+";
-    private final static String PASSWORD_REGEX = "^[-ёЁа-яА-Я\\w\\s]{6,20}$";
-    private final static String NAME_REGEX = "^([ёЁа-яА-Я]+|[a-zA-Z]+)$";
-    private final static String LOGIN_REGEX = "^[a-zA-ZёЁа-яА-Я][ёЁа-яА-Я\\w-]{2,9}$";
-    private final static String EMAIL_REGEX = "([\\w\\.\\-]+)?\\w+@[\\w-]+(\\.\\w+)+";
-    private final static String ID_REGEX = "^\\d{1,4}$";
-    private final static String NUMBER_REGEX = "^\\d+$";
-    private final static String CODE_REGEX = "^\\d{1,19}$";
-    private final static String YEAR_REGEX = "(^19|20)\\d\\d$";
-    private final static String DATE_REGEX = "(^19|20)\\d\\d-(0[1-9]|1[0-2])-(0[1-9]|[1-2]\\d|3[0-1])$";
+    public static final String GREEDY_SPACES = "\\s+";
+    private static final String PASSW_REGEX = "^[-ёЁа-яА-Я\\w\\s]{6,20}$";
+    private static final String NAME_REGEX = "^([ёЁа-яА-Я]+|[a-zA-Z]+)$";
+    private static final String LOGIN_REGEX = "^[a-zA-ZёЁа-яА-Я][ёЁа-яА-Я\\w-]{2,9}$";
+    private static final String EMAIL_REGEX = "([\\w\\.\\-]+)?\\w+@[\\w-]+(\\.\\w+)+";
+    private static final String ID_REGEX = "^\\d{1,4}$";
+    private static final String NUMBER_REGEX = "^\\d+$";
+    private static final String CODE_REGEX = "^\\d{1,19}$";
+    private static final String YEAR_REGEX = "(^19|20)\\d\\d$";
+    private static final String DATE_REGEX = "(^19|20)\\d\\d-(0[1-9]|1[0-2])-(0[1-9]|[1-2]\\d|3[0-1])$";
 
     private static final String LOGIN_FIELD = "login";
-    private static final String PASSWORD_FIELD = "password";
+    private static final String PASS_FIELD = "password";
     private static final String NAME_FIELD = "name";
     private static final String EMAIL_FIELD = "email";
     private static final String ID_FIELD = "id";
@@ -54,8 +54,8 @@ public class FilmRatingRegEx {
             case LOGIN_FIELD:
                 regexPattern = LOGIN_REGEX;
                 break;
-            case PASSWORD_FIELD:
-                regexPattern = PASSWORD_REGEX;
+            case PASS_FIELD:
+                regexPattern = PASSW_REGEX;
                 break;
             case NAME_FIELD:
                 regexPattern = NAME_REGEX;

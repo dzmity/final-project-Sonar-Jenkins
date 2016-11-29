@@ -3,11 +3,11 @@
 
 <html>
   <body>
-
-  <c:if test="${currentUser.role.toString() == initParam.admin}">
+Hello
+  <%-- <c:if test="${currentUser.role.toString() == initParam.admin}">
     <jsp:forward page="/controller?command=view_comments"/>
   </c:if>
-  <jsp:forward page="/controller?command=start"/>
+  <jsp:forward page="/controller?command=start"/> --%>
 
   </body>
 </html>
