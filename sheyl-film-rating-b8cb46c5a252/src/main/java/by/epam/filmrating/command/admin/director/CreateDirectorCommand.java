@@ -12,7 +12,7 @@ import by.epam.filmrating.manager.PathManager;
  */
 public class CreateDirectorCommand implements ActionCommand {
 
-    private  static final String PATH = "path.page.admin.director";
+    private static final String PATH = "path.page.admin.director";
 
     /**
      *

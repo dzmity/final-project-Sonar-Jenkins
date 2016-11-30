@@ -31,8 +31,13 @@ public class FilmRatingRegEx {
     private static final String NUMBER_FIELD = "number";
     private static final String YEAR_FIELD = "year";
     private static final String DATE_FIELD = "date";
-    private static final String CODE_FIELD = "code";
-    /**
+    private static final String CODE_FIELD = "code";    
+    
+    
+    private FilmRatingRegEx() {		
+	}
+
+	/**
      * Method defines the way of data validation.
      * @param field
      *        string value, which use for find right regex expression.
