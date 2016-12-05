@@ -25,13 +25,13 @@ public class LogInCommand implements ActionCommand {
     private static final String LOCALE = "locale";
     private static final String LOGIN_ERROR = "loginError";
     private static final String LOGIN_KEY = "message.login.login";
-    private final static String BEFORE_LOGIN = "beforeLogin";
+    private static final String BEFORE_LOGIN = "beforeLogin";
     private static final String HREF_ACTION = "/controller?";
     private static final String HREF_COMMAND = "command=";
     private static final String ADMIN_COMMAND = "view_comments";
     private static final String GO_TO_LOGIN_COMMAND = "go_to_login";
     private static final String LOGIN = "login";
-    private static final String PASSWORD = "password";
+    private static final String PASS = "password";
     private static final String CURRENT_USER = "currentUser";
 
     /**
@@ -50,7 +50,7 @@ public class LogInCommand implements ActionCommand {
 
         Locale locale = new Locale((String) content.getSessionAttributes().get(LOCALE));
         String[] login = content.getRequestParameters().get(LOGIN);
-        String[] password = content.getRequestParameters().get(PASSWORD);
+        String[] password = content.getRequestParameters().get(PASS);
 
         if (login == null || password == null) {
             LOG.error("'Login' and 'Password' fields must be filled. Check 'required' parameter for " +
@@ -60,7 +60,7 @@ public class LogInCommand implements ActionCommand {
 
         try {
             FilmRatingRegEx.checkData(LOGIN, login[0]);
-            FilmRatingRegEx.checkData(PASSWORD, password[0]);
+            FilmRatingRegEx.checkData(PASS, password[0]);
 
             UserService userService = new UserService();
             User user = userService.findByLoginPassword(login[0], password[0]);

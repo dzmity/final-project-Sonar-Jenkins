@@ -31,11 +31,11 @@ public class ConnectionPool {
     private static final String CONFIG_PATH = "config";
     private static final String URL = "database.url";
     private static final String USER = "user";
-    private static final String PASSWORD = "password";
+    private static final String PASS = "password";
     private static final String USE_UNICODE = "useUnicode";
     private static final String CHARACTER_ENCODING = "characterEncoding";
     private static final String POOL_SIZE = "database.pool.size";
-    private static final String CHECK__EXCEPTION_TIME = "database.checkingExceptionCount";
+    private static final String CHECK_EXCEPTION_TIME = "database.checkingExceptionCount";
     private static final String CHECKING_TIME = "database.checkingTime";
     private static final String DEFAULT_USE_UNICODE = "true";
     private static final String DEFAULT_CHARACTER_ENCODING = "UTF-8";
@@ -76,7 +76,7 @@ public class ConnectionPool {
         try {
             databaseUrl = resourceBundle.getString(URL);
             user = resourceBundle.getString(USER);
-            pass = resourceBundle.getString(PASSWORD);
+            pass = resourceBundle.getString(PASS);
         } catch (MissingResourceException e) {
             LOG.fatal("Can't find necessary key in config.properties for pool creation. " , e);
             throw new RuntimeException("Can't find necessary key in config.properties for pool creation. ");
@@ -95,7 +95,7 @@ public class ConnectionPool {
 
         databaseProperties = new Properties();
         databaseProperties.put(USER, user);
-        databaseProperties.put(PASSWORD, pass);
+        databaseProperties.put(PASS, pass);
         databaseProperties.put(USE_UNICODE, useUnicode);
         databaseProperties.put(CHARACTER_ENCODING, encoding);
 
@@ -138,7 +138,7 @@ public class ConnectionPool {
 
         int exceptionMaxCount;
         try {
-            exceptionMaxCount = Integer.parseInt(resourceBundle.getString(CHECK__EXCEPTION_TIME));
+            exceptionMaxCount = Integer.parseInt(resourceBundle.getString(CHECK_EXCEPTION_TIME));
         } catch (MissingResourceException | NumberFormatException e) {
             LOG.error("Can't find 'database.checkingExceptionCount' key in config.properties or value is not a number. " , e);
             exceptionMaxCount = DEFAULT_EXCEPTION_COUNT;

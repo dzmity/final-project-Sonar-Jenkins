@@ -26,15 +26,15 @@ public class ChangePasswordCommand implements ActionCommand {
     private static final Logger LOG = LogManager.getLogger();
     private static final String LOCALE = "locale";
     private static final String CURRENT_USER = "currentUser";
-    private static final String PASSWORD_ERROR = "passwordError";
+    private static final String PASS_ERROR = "passwordError";
     private static final String CONFIRM_ERROR = "error";
-    private static final String PASSWORD_INFO = "passwordInfo";
-    private static final String PASSWORD_INFO_KEY = "message.settings.passwordInfo";
-    private static final String PASSWORD_ERROR_KEY = "message.settings.passwordError";
+    private static final String PASS_INFO = "passwordInfo";
+    private static final String PASS_INFO_KEY = "message.settings.passwordInfo";
+    private static final String PASS_ERROR_KEY = "message.settings.passwordError";
     private static final String CONFIRM_ERROR_KEY = "message.settings.error";
-    private static final String PASSWORD = "password";
-    private static final String OLD_PASSWORD = "oldPassword";
-    private static final String NEW_PASSWORD = "newPassword";
+    private static final String PASS = "password";
+    private static final String OLD_PASS = "oldPassword";
+    private static final String NEW_PASS = "newPassword";
     private static final String CONFIRM = "confirm";
 
     /**
@@ -64,8 +64,8 @@ public class ChangePasswordCommand implements ActionCommand {
         }
 
         Locale locale = new Locale((String) content.getSessionAttributes().get(LOCALE));
-        String[] oldPassword = content.getRequestParameters().get(OLD_PASSWORD);
-        String[] newPassword = content.getRequestParameters().get(NEW_PASSWORD);
+        String[] oldPassword = content.getRequestParameters().get(OLD_PASS);
+        String[] newPassword = content.getRequestParameters().get(NEW_PASS);
         String[] confirm = content.getRequestParameters().get(CONFIRM);
 
         if (oldPassword == null || newPassword == null || confirm == null) {
@@ -81,18 +81,18 @@ public class ChangePasswordCommand implements ActionCommand {
         }
 
         try {
-            FilmRatingRegEx.checkData(PASSWORD, oldPassword[0]);
-            FilmRatingRegEx.checkData(PASSWORD, newPassword[0]);
+            FilmRatingRegEx.checkData(PASS, oldPassword[0]);
+            FilmRatingRegEx.checkData(PASS, newPassword[0]);
 
             UserService userService = new UserService();
             User user = userService.findByLoginPassword(currentUser.getLogin(), oldPassword[0]);
 
             if (user.getLogin() == null) {
-                content.setAttribute(PASSWORD_ERROR, MessageManager.getProperty(PASSWORD_ERROR_KEY, locale));
+                content.setAttribute(PASS_ERROR, MessageManager.getProperty(PASS_ERROR_KEY, locale));
                 return (String) content.getSessionAttributes().get(CURRENT_PAGE);
             }
             userService.changePasswordById(currentUser.getId(), oldPassword[0], newPassword[0]);
-            content.setAttribute(PASSWORD_INFO, MessageManager.getProperty(PASSWORD_INFO_KEY, locale));
+            content.setAttribute(PASS_INFO, MessageManager.getProperty(PASS_INFO_KEY, locale));
 
         } catch (ServiceException e) {
             LOG.error("Exception in ChangePasswordCommand", e);

@@ -52,7 +52,7 @@ public class UserDAOImpl extends UserDAO {
     private static final String SQL_CHECK_BAN = "UPDATE database1.user SET ban_date = ? WHERE ban_date < NOW()";
     private static final String SQL_UPDATE_MARK_BY_ID = "UPDATE database1.user SET rating = ? WHERE user_id = ?";
     private static final String SQL_FIND_MARK_BY_ID = "SELECT rating FROM database1.user WHERE user_id = ?";
-    private static final String SQL_CHANGE_PASSWORD_BY_ID = "UPDATE database1.user SET password = ? WHERE user_id = ? AND password = ?";
+    private static final String SQL_CHANGE_PASS_BY_ID = "UPDATE database1.user SET password = ? WHERE user_id = ? AND password = ?";
     private static final String SQL_CHANGE_PICTURE_BY_ID = "UPDATE database1.user SET picturePath = ? WHERE user_id = ?";
     private static final String SQL_EXIST_LOGIN = "SELECT * FROM database1.user WHERE login = ?";
     private static final String SQL_EXIST_EMAIL = "SELECT * FROM database1.user WHERE email = ?";
@@ -230,7 +230,7 @@ public class UserDAOImpl extends UserDAO {
     @Override
     public void changePasswordById(long id, String oldPassword, String newPassword) throws DAOException {
 
-        try (PreparedStatement statement = connector.prepareStatement(SQL_CHANGE_PASSWORD_BY_ID)) {
+        try (PreparedStatement statement = connector.prepareStatement(SQL_CHANGE_PASS_BY_ID)) {
 
              statement.setString(1, newPassword);
              statement.setLong(2, id);
