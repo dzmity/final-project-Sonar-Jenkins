@@ -29,7 +29,7 @@
         <div class="col-lg-6">
             <div class="row">
                 <div class="alert alert-warning"><h3 align="center"><fmt:message key="table.title1"/></h3></div>
-                <form class="form-horizontal" role="form" name="updateCountryForm" action="controller" method="POST">
+                <form class="form-horizontal" role="form" name="updateCountryForm" action="${pageContext.request.contextPath}/controller" method="POST">
                     <input type="hidden" name="code" value="${newCode}"/>
                     <input type="hidden" name="command" value="update_countries" />
                     <c:forEach var="country" items="${countries}">
@@ -47,7 +47,7 @@
         <div class="col-lg-6">
             <div class="row">
                 <div class="alert alert-warning"><h3 align="center"><fmt:message key="table.title2"/></h3></div>
-                <form class="form-horizontal" role="form" name="updateFilmForm" action="controller" method="POST">
+                <form class="form-horizontal" role="form" name="updateFilmForm" action="${pageContext.request.contextPath}/controller" method="POST">
                     <input type="hidden" name="code" value="${newCode}"/>
                     <input type="hidden" name="command" value="update_genres" />
                     <c:forEach var="genre" items="${genres}">

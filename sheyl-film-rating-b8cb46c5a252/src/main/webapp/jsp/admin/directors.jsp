@@ -38,10 +38,10 @@
             </thead>
             <c:forEach var="director" items="${directors}">
                 <tr>
-                  <td >${director.id} </td>
+                  <td >${director.id}</td>
                   <td>${director.name} ${director.surname}</td>
-                  <td><a href="/controller?command=view_director&id=${director.id}" class="btn btn-info"><fmt:message key="button.view"/></a> </td>
-                  <td><a href="/controller?command=change_director&id=${director.id}" class="btn btn-warning"><fmt:message key="button.update"/></a> </td>
+                  <td><a href="${pageContext.request.contextPath}/controller?command=view_director&id=${director.id}" class="btn btn-info"><fmt:message key="button.view"/></a> </td>
+                  <td><a href="${pageContext.request.contextPath}/controller?command=change_director&id=${director.id}" class="btn btn-warning"><fmt:message key="button.update"/></a> </td>
                   <td>
                       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-${director.id}"><fmt:message key="button.delete"/></button>
                   </td>
@@ -64,7 +64,7 @@
 
                             <div class="modal-footer">
                                 <button class="btn btn-danger" type="button" data-dismiss="modal"><fmt:message key="modalWindow.button"/></button>
-                                <a href="/controller?command=delete_director&id=${director.id}" class="btn btn-success"><fmt:message key="button.delete"/></a>
+                                <a href="${pageContext.request.contextPath}/controller?command=delete_director&id=${director.id}" class="btn btn-success"><fmt:message key="button.delete"/></a>
                             </div>
 
                         </div>

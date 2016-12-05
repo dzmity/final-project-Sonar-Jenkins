@@ -24,7 +24,7 @@
         </div>
 
         <div class="col-lg-7 col-lg-offset-1" >
-        <form class="form-horizontal"  role="form" name="loginForm" action="controller" method="POST">
+        <form class="form-horizontal"  role="form" name="loginForm" action="${pageContext.request.contextPath}/controller" method="POST">
             <input type="hidden" name="command" value="log_in" />
 
             <c:if test="${not empty successMessage}">

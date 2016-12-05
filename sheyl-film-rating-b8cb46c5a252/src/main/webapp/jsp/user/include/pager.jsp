@@ -19,9 +19,9 @@
 <div class="row">
     <nav>
        <ul class="pager">
-           <li class="previous ${leftClass}"><a href="${leftHref}">&larr; <fmt:message key="previous"/></a></li>
+           <li class="previous ${leftClass}"><a href="${pageContext.request.contextPath}/${leftHref}">&larr; <fmt:message key="previous"/></a></li>
            <li>${page}</li>
-           <li class=" next ${rightClass}"><a href="${rightHref}"><fmt:message key="next"/> &rarr;</a></li>
+           <li class=" next ${rightClass}"><a href="${pageContext.request.contextPath}/${rightHref}"><fmt:message key="next"/> &rarr;</a></li>
        </ul>
     </nav>
     <br>

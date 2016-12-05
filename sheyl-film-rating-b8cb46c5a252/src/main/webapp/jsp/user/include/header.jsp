@@ -32,26 +32,26 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand logo" href="/controller?command=start"><img src="/images/movie.png" width="70"></a>
+                  <a class="navbar-brand logo" href="${pageContext.request.contextPath}/controller?command=start"><img src="${pageContext.request.contextPath}/images/movie.png" width="70"></a>
               </div>
               <div class="collapse navbar-collapse" id="responsive-menu">
                   <ul class="nav navbar-nav">
                      <li><a href="#"></a></li>
-                      <li><a href="/controller?command=find_all_films"><fmt:message key="films"/></a></li>
-                      <li><a href="/controller?command=find_all_actors"><fmt:message key="actors"/></a></li>
-                      <li><a href="/controller?command=find_all_directors"><fmt:message key="directors"/></a></li>
+                      <li><a href="${pageContext.request.contextPath}/controller?command=find_all_films"><fmt:message key="films"/></a></li>
+                      <li><a href="${pageContext.request.contextPath}/controller?command=find_all_actors"><fmt:message key="actors"/></a></li>
+                      <li><a href="${pageContext.request.contextPath}/controller?command=find_all_directors"><fmt:message key="directors"/></a></li>
                       <%--<li><a href="#"><fmt:message key="rating"/></a></li>--%>
                   </ul>
 
                   <ul class="nav navbar-nav  navbar-right">
                         <c:choose >
                             <c:when  test= "${!empty  currentUser}">
-                                <li><a href="/controller?command=user_settings"><span class="glyphicon glyphicon-user"></span> ${currentUser.login}</a></li>
-                                <li><a href="/controller?command=log_out"><span class="glyphicon glyphicon-log-out"></span> <fmt:message key="logoutButton"/></a></li>
+                                <li><a href="${pageContext.request.contextPath}/controller?command=user_settings"><span class="glyphicon glyphicon-user"></span> ${currentUser.login}</a></li>
+                                <li><a href="${pageContext.request.contextPath}/controller?command=log_out"><span class="glyphicon glyphicon-log-out"></span> <fmt:message key="logoutButton"/></a></li>
                             </c:when>
                             <c:otherwise>
 
-                                <li><form action="controller" class="navbar-form " method="post">
+                                <li><form action="${pageContext.request.contextPath}/controller" class="navbar-form " method="post">
                                   <input type="hidden" name="command" value="log_in">
                                  <div class="form-group">
                                      <input type="text" required class="form-control" name="login" pattern="^[a-zA-ZёЁа-яА-Я][ёЁа-яА-Я\w-]{2,9}$" placeholder="<fmt:message key="login"/>" >
@@ -65,11 +65,11 @@
 
                             </form></li>
 
-                                <li><a href="/controller?command=sign_up"><span class="glyphicon glyphicon-user"></span> <fmt:message key="signUp"/></a></li>
+                                <li><a href="${pageContext.request.contextPath}/controller?command=sign_up"><span class="glyphicon glyphicon-user"></span> <fmt:message key="signUp"/></a></li>
                             </c:otherwise>
                         </c:choose>
 
-                        <li><a href="/controller?command=change_language&code=${newCode}" >${altLocale}</a></li>
+                        <li><a href="${pageContext.request.contextPath}/controller?command=change_language&code=${newCode}" >${altLocale}</a></li>
                   </ul>
               </div>
           </div>

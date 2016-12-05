@@ -27,7 +27,7 @@
 <div class="container">
     <div class="row">
 
-        <form class="form-horizontal" role="form" name="updateFilmForm" action="controller" method="POST">
+        <form class="form-horizontal" role="form" name="updateFilmForm" action="${pageContext.request.contextPath}/controller" method="POST">
             <input type="hidden" name="code" value="${newCode}" />
             <c:choose >
                 <c:when  test= "${!empty  film}">
@@ -106,7 +106,7 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button type="submit" class="btn btn-success"><fmt:message key="changeButton"/></button>
-                <a class="btn btn-warning" href="/controller?command=find_films_by_admin"><fmt:message key="cancelButton"/></a>
+                <a class="btn btn-warning" href="${pageContext.request.contextPath}/controller?command=find_films_by_admin"><fmt:message key="cancelButton"/></a>
             </div>
           </div>
         </div>

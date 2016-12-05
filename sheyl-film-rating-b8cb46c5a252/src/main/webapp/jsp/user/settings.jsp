@@ -23,7 +23,7 @@
 <fmt:setLocale value="${locale}" />
 <fmt:bundle basename="applicationresource" prefix="page.registration.">
 <head>
-	<title>${currentUser.login} </title>
+	<title>${currentUser.login}</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -40,7 +40,7 @@
 
         <div class="col-lg-2 well" style="background-color: white">
 
-            <img src="images/user/${currentUser.picturePath}.jpeg" alt="" width="100%">
+            <img src="${pageContext.request.contextPath}/images/user/${currentUser.picturePath}.jpeg" alt="" width="100%">
             <br>
             <button type="button" class="btn btn-href btn-block" data-toggle="modal" data-target="#modal-1">
                 <fmt:message key="changePhotoButton"/>
@@ -81,7 +81,7 @@
             <div class="well" style="background-color: white">
                 <div class="row">
                     <div class="col-lg-11">
-                        <form class="form-horizontal" role="form" name="updateUserForm" action="controller" method="POST">
+                        <form class="form-horizontal" role="form" name="updateUserForm" action="${pageContext.request.contextPath}/controller" method="POST">
                             <input type="hidden" name="code" value="${newCode}"/>
                             <input type="hidden" name="command" value="update_user" />
 
@@ -180,7 +180,7 @@
 			<div class="collapse well" id="spoiler-1" style="background-color: white">
                 <div class="row">
                     <div class="col-lg-11">
-                        <form class="form-horizontal" onSubmit="return checkPw(this)" role="form" name="changePasswordForm" action="controller" method="POST">
+                        <form class="form-horizontal" onSubmit="return checkPw(this)" role="form" name="changePasswordForm" action="${pageContext.request.contextPath}/controller" method="POST">
                             <input type="hidden" name="code" value="${newCode}"/>
                             <input type="hidden" name="command" value="change_password" />
 

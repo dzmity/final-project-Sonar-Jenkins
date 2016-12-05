@@ -20,7 +20,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<c:if  test= "${ currentUser.role.toString() != initParam.admin}">
+<c:if test= "${ currentUser.role.toString() != initParam.admin}">
     <c:redirect url="/index.jsp"/>
 </c:if>
 
@@ -39,7 +39,7 @@
             <c:forEach var="user" items="${users}">
                 <tr>
                     <td>
-                        <a href="/controller?command=user_info&id=${user.id}">${user.login}</a>
+                        <a href="${pageContext.request.contextPath}/controller?command=user_info&id=${user.id}">${user.login}</a>
                     </td>
                     <td>${user.role}</td>
                     <td>${user.comments.size()}</td>

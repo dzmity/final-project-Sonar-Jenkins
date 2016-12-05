@@ -5,7 +5,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <c:choose >
-    <c:when  test= "${ currentUser.role.toString() == initParam.admin}">
+    <c:when  test= "${currentUser.role.toString() == initParam.admin}">
         <%@ include file="/jsp/admin/include/header.jsp"%>
     </c:when>
     <c:otherwise>

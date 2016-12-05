@@ -36,9 +36,9 @@
                         </tr>
                         </thead>
                         <c:forEach var="actor" items="${leftColumn}">
-                            <tr data-href = "/controller?command=view_actor&id=${actor.id}">
-                                <td ><img src="/images/actor/${actor.photoPath}.jpg" height="100"> </td>
-                                <td> <a href="/controller?command=view_actor&id=${actor.id}" >${actor.name} ${actor.surname}</a></td>
+                            <tr data-href = "${pageContext.request.contextPath}/controller?command=view_actor&id=${actor.id}">
+                                <td ><img src="${pageContext.request.contextPath}/images/actor/${actor.photoPath}.jpg" height="100"> </td>
+                                <td> <a href="${pageContext.request.contextPath}/controller?command=view_actor&id=${actor.id}" >${actor.name} ${actor.surname}</a></td>
                             </tr>
                         </c:forEach>
                     </table>
@@ -57,9 +57,9 @@
                         </tr>
                         </thead>
                         <c:forEach var="actor" items="${rightColumn}">
-                            <tr data-href = "/controller?command=view_actor&id=${actor.id}">
-                                <td ><img src="/images/actor/${actor.photoPath}.jpg" height="100"> </td>
-                                <td> <a href="/controller?command=view_actor&id=${actor.id}" >${actor.name} ${actor.surname}</a></td>
+                            <tr data-href = "${pageContext.request.contextPath}/controller?command=view_actor&id=${actor.id}">
+                                <td ><img src="${pageContext.request.contextPath}/images/actor/${actor.photoPath}.jpg" height="100"> </td>
+                                <td> <a href="${pageContext.request.contextPath}/controller?command=view_actor&id=${actor.id}" >${actor.name} ${actor.surname}</a></td>
                             </tr>
                         </c:forEach>
                     </table>

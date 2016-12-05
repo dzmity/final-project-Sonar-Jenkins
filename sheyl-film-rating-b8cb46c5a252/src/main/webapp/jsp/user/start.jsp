@@ -52,9 +52,9 @@
                         <c:set var="color" value="aliceBlue"/>
                     </c:otherwise>
                 </c:choose>
-            <tr data-href = "/controller?command=view_film&id=${film.value.id}" style="background-color: ${color} ">
+            <tr data-href = "${pageContext.request.contextPath}/controller?command=view_film&id=${film.value.id}" style="background-color: ${color} ">
               <td>${film.key}</td>
-              <td> <img src="/images/film/${film.value.picturePath}.jpg" height="80"> </td>
+              <td> <img src="${pageContext.request.contextPath}/images/film/${film.value.picturePath}.jpg" height="80"> </td>
               <td>${film.value.title}</td>
               <td> ${film.value.rating}%</td>
               <td> ${film.value.marksCount}</td>

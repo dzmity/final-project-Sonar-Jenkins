@@ -50,10 +50,10 @@
                 <td style="text-align:right">
                     <c:choose >
                         <c:when  test = "${user.banTime != null}">
-                            <a href="/controller?command=lift_ban_user&id=${user.id}" class="btn btn-success"><fmt:message key="button.liftBan"/></a>
+                            <a href="${pageContext.request.contextPath}/controller?command=lift_ban_user&id=${user.id}" class="btn btn-success"><fmt:message key="button.liftBan"/></a>
                         </c:when>
                         <c:otherwise>
-                        <form role="form" class="form-inline" action="controller">
+                        <form role="form" class="form-inline" action="${pageContext.request.contextPath}/controller">
                             <input type="hidden" name="command" value="ban_user">
                             <input type="hidden" name="id" value="${user.id}">
                             <input type="hidden" name="code" value="${newCode}">
@@ -66,7 +66,7 @@
             </tr>
         </table>
         <hr>
-        <form role="form" class="form-inline" action="controller">
+        <form role="form" class="form-inline" action="${pageContext.request.contextPath}/controller">
             <input type="hidden" name="code" value="${newCode}"/>
             <input type="hidden" name="command" value="upgrade_status">
             <input type="hidden" name="id" value="${user.id}">
@@ -98,7 +98,7 @@
                   </td>
                   <td><p><c:out value="${comment.text}"/></p></td>
                   <td>
-                      <a href="/controller?command=ban_comment&id=${comment.id}" class="btn btn-warning"><fmt:message key="table1.ban"/></a>
+                      <a href="${pageContext.request.contextPath}/controller?command=ban_comment&id=${comment.id}" class="btn btn-warning"><fmt:message key="table1.ban"/></a>
                   </td>
                 </tr>
             </c:forEach>

@@ -35,7 +35,7 @@
 <%------------------------------------Left Row------------------------------------------------------------------------%>
 		<div class="col-lg-3">
 			<div class="row">
-			<img src="images/actor/${actor.photoPath}.jpg" alt="" width="100%">
+			<img src="${pageContext.request.contextPath}/images/actor/${actor.photoPath}.jpg" alt="" width="100%">
 			</div>
 		</div>
 <%------------------------------------Center Row----------------------------------------------------------------------%>
@@ -65,7 +65,7 @@
 			<div class="row">
 			<h4><fmt:message key="films"/></h4>
 			<c:forEach var="film" items="${films}">
-				<p><a href="/controller?command=view_film&id=${film.id}" >${film.title}(${film.year})</a></p>
+				<p><a href="${pageContext.request.contextPath}/controller?command=view_film&id=${film.id}" >${film.title}(${film.year})</a></p>
 			</c:forEach>
 			</div>
 		</div>
@@ -85,7 +85,7 @@
 </fmt:bundle>
 <fmt:bundle basename="applicationresource" prefix="page.footer.">
 	<c:choose >
-		<c:when  test= "${ currentUser.role.toString() == initParam.admin}">
+		<c:when  test= "${currentUser.role.toString() == initParam.admin}">
 			<raf:adminFooter locale="${locale}"><fmt:message key="text"/></raf:adminFooter>
 		</c:when>
 		<c:otherwise>

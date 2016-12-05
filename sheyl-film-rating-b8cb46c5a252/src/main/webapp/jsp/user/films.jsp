@@ -39,7 +39,7 @@
                    <div class="tab-content">
                        <div class="tab-pane fade in active" id="tab-1">
                            <div id="imaginary_container">
-                               <form class="form-horizontal" role="form" name="updateFilmForm" action="controller" method="POST">
+                               <form class="form-horizontal" role="form" name="updateFilmForm" action="${pageContext.request.contextPath}/controller" method="POST">
                                    <input type="hidden" name="command" value="find_films_by_title" />
                                     <div class="input-group stylish-input-group">
                                         <input type="text" required name = "word" class="form-control"  placeholder="<fmt:message key="search.search"/>" value="${searchError}">
@@ -56,7 +56,7 @@
                        <div class="tab-pane fade" id="tab-2">
                            <br>
                            <div id="imaginary_container2">
-                               <form class="form-horizontal" role="form" name="updateFilmForm" action="controller" method="GET">
+                               <form class="form-horizontal" role="form" name="updateFilmForm" action="${pageContext.request.contextPath}/controller" method="GET">
                                     <input type="hidden" name="command" value="find_films_by_genre" />
                                     <div class="input-group stylish-input-group">
                                         <input type="text" required name = "word" class="form-control"  placeholder="<fmt:message key="search.search"/>" >
@@ -73,7 +73,7 @@
                        <div class="tab-pane fade" id="tab-3">
                            <br>
                            <div id="imaginary_container3">
-                               <form class="form-horizontal" role="form" name="updateFilmForm" action="controller" method="GET">
+                               <form class="form-horizontal" role="form" name="updateFilmForm" action="${pageContext.request.contextPath}/controller" method="GET">
                                    <input type="hidden" name="command" value="find_films_by_year" />
                                     <div class="input-group stylish-input-group">
                                         <input type="number" required name = "word" class="form-control"  placeholder="<fmt:message key="search.search"/>" >
@@ -90,7 +90,7 @@
                        <div class="tab-pane fade" id="tab-4">
                            <br>
                            <div id="imaginary_container4">
-                               <form class="form-horizontal" role="form" name="updateFilmForm" action="controller" method="GET">
+                               <form class="form-horizontal" role="form" name="updateFilmForm" action="${pageContext.request.contextPath}/controller" method="GET">
                                    <input type="hidden" name="command" value="find_films_by_director" />
                                     <div class="input-group stylish-input-group">
                                         <input type="text" required name = "word" class="form-control"  placeholder="<fmt:message key="search.search"/>" >
@@ -106,7 +106,7 @@
                        <div class="tab-pane fade" id="tab-5">
                            <br>
                            <div id="imaginary_container5">
-                               <form class="form-horizontal" role="form" name="updateFilmForm" action="controller" method="GET">
+                               <form class="form-horizontal" role="form" name="updateFilmForm" action="${pageContext.request.contextPath}/controller" method="GET">
                                    <input type="hidden" name="command" value="find_films_by_actor" />
                                     <div class="input-group stylish-input-group">
                                         <input type="text" required name = "word" class="form-control"  placeholder="<fmt:message key="search.search"/>" >
@@ -183,8 +183,8 @@
                         </thead>
                         <c:forEach var="film" items="${rightColumn}">
                             <tr data-href = "/controller?command=view_film&id=${film.id}">
-                                <td><img src="/images/film/${film.picturePath}.jpg" height="100">  </td>
-                                <td><a href="/controller?command=view_film&id=${film.id}">${film.title}</a></td>
+                                <td><img src="${pageContext.request.contextPath}/images/film/${film.picturePath}.jpg" height="100">  </td>
+                                <td><a href="${pageContext.request.contextPath}/controller?command=view_film&id=${film.id}">${film.title}</a></td>
                                 <td> ${film.year} </td>
                             </tr>
                         </c:forEach>

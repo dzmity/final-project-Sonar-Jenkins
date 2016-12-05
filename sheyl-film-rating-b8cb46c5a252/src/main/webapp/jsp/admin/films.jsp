@@ -34,15 +34,15 @@
                 <tr>
                     <th><fmt:message key="table.id" /></th>
                     <th><fmt:message key="table.title"/></th>
-                    <th><a href="/controller?command=create_film&code=${newCode}" class="btn btn-default"><fmt:message key="button.add"/></a> </th>
+                    <th><a href="${pageContext.request.contextPath}/controller?command=create_film&code=${newCode}" class="btn btn-default"><fmt:message key="button.add"/></a> </th>
                 </tr>
             </thead>
             <c:forEach var="film" items="${films}">
                 <tr >
                   <td >${film.id} </td>
                   <td>${film.title}</td>
-                  <td><a href="/controller?command=view_film&id=${film.id}"class="btn btn-info"><fmt:message key="button.view"/></a> </td>
-                  <td><a href="/controller?command=change_film&id=${film.id}" class="btn btn-warning"><fmt:message key="button.update"/></a> </td>
+                  <td><a href="${pageContext.request.contextPath}/controller?command=view_film&id=${film.id}"class="btn btn-info"><fmt:message key="button.view"/></a> </td>
+                  <td><a href="${pageContext.request.contextPath}/controller?command=change_film&id=${film.id}" class="btn btn-warning"><fmt:message key="button.update"/></a> </td>
                   <td>
                       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-${film.id}"><fmt:message key="button.delete"/></button>
                   </td>
@@ -65,7 +65,7 @@
 
                             <div class="modal-footer">
                                 <button class="btn btn-danger" type="button" data-dismiss="modal"><fmt:message key="modalWindow.button"/></button>
-                                <a href="/controller?command=delete_film&id=${film.id}" class="btn btn-success"><fmt:message key="button.delete"/></a>
+                                <a href="${pageContext.request.contextPath}/controller?command=delete_film&id=${film.id}" class="btn btn-success"><fmt:message key="button.delete"/></a>
                             </div>
 
                         </div>

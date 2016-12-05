@@ -23,7 +23,7 @@
         </div>
 
         <div class="col-lg-7 col-lg-offset-1" >
-        <form class="form-horizontal" onSubmit="return checkPw(this)" role="form" name="registrationForm" action="controller" method="POST">
+        <form class="form-horizontal" onSubmit="return checkPw(this)" role="form" name="registrationForm" action="${pageContext.request.contextPath}/controller" method="POST">
             <input type="hidden" name="command" value="registration" />
             <input type="hidden" name="code" value="${newCode}"/>
 

@@ -36,7 +36,7 @@
 <%------------------------------------------LEFT COLUMN---------------------------------------------------------------%>
 		<div class="col-lg-3">
 			<div class="row">
-			<img src="images/film/${film.picturePath}.jpg" alt="" width="100%">
+			<img src="${pageContext.request.contextPath}/images/film/${film.picturePath}.jpg" alt="" width="100%">
 			<h3><fmt:message key="rating"/></h3>
 			<div class="progress danger">
 				<div class="progress-bar progress-bar-success" style="min-width: 5%; width: ${film.rating}%" >
@@ -47,7 +47,7 @@
 			<p style="color: red">${markError}</p>
 
 			<c:if test="${! empty currentUser}">
-				<form name="commentForm" action="controller" method="POST">
+				<form name="commentForm" action="${pageContext.request.contextPath}/controller" method="POST">
 					<input type="hidden" name="code" value="${newCode}"/>
 					<input type="hidden" name="command" value="add_mark"/>
 					<input type="hidden" name="filmId" value="${film.id}"/>
@@ -83,7 +83,7 @@
 				<tr>
 					<td><fmt:message key="director"/> </td>
 					<td>
-						<a href="/controller?command=view_director&id=${film.director.id}">
+						<a href="${pageContext.request.contextPath}/controller?command=view_director&id=${film.director.id}">
 						${film.director.name} ${film.director.surname}
 						</a>
 					</td>
@@ -119,7 +119,7 @@
 
 			<c:choose >
 				<c:when  test= "${! empty currentUser}">
-				<form name="commentForm" action="controller" method="POST">
+				<form name="commentForm" action="${pageContext.request.contextPath}/controller" method="POST">
 
 					<div class="form-group">
 						<input type="hidden" name="code" value="${newCode}"/>
@@ -163,7 +163,7 @@
 					<div class="media">
 						<p class="pull-right"><small>${raf:format(comment.date, 'd MMMM yyyy   H:mm', locale)}</small></p>
 						<a class="media-left" href="#">
-							<img src="/images/user/${comment.user.picturePath}.jpeg" width="64 px" height="64 px">
+							<img src="${pageContext.request.contextPath}/images/user/${comment.user.picturePath}.jpeg" width="64 px" height="64 px">
 						</a>
 						<div class="media-body">
 							<h4 class="media-heading user_name">${comment.user.login}</h4>
@@ -182,7 +182,7 @@
 			<div class="row">
 			<h4><fmt:message key="actors"/></h4>
 			<c:forEach var="actor" items="${film.actors}">
-				<p><a href="/controller?command=view_actor&id=${actor.id}" >${actor.name} ${actor.surname}</a></p>
+				<p><a href="${pageContext.request.contextPath}/controller?command=view_actor&id=${actor.id}" >${actor.name} ${actor.surname}</a></p>
 			</c:forEach>
 			</div>
 		</div>

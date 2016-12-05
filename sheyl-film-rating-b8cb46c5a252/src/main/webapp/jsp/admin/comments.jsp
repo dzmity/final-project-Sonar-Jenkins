@@ -21,14 +21,14 @@
 
 </head>
 <body>
-<c:if  test= "${ currentUser.role.toString() != initParam.admin}">
+<c:if  test= "${currentUser.role.toString() != initParam.admin}">
     <c:redirect url="/index.jsp"/>
 </c:if>
 
 <div class="container">
     <div class="row">
         <div class="alert alert-warning"><h3 align="center"><fmt:message key="table.title"/></h3></div>
-        <form role="form" class="form-inline" action="controller">
+        <form role="form" class="form-inline" action="${pageContext.request.contextPath}/controller">
             <input type="hidden" name="command" value="view_comments">
             <div class="form-group">
                 <label for="date1"><fmt:message key="date"/> </label>
@@ -59,12 +59,12 @@
                       <input type="datetime" class="form-control" required disabled  value="${raf:format(comment.date, 'd MMM H:mm', locale)}">
                   </td>
                   <td>
-                    <a href="/controller?command=user_info&id=${comment.user.id}">${comment.user.login}</a>
+                    <a href="${pageContext.request.contextPath}/controller?command=user_info&id=${comment.user.id}">${comment.user.login}</a>
                   </td>
                   <td>${comment.film.title}</td>
                   <td><p><c:out value="${comment.text}"/></p></td>
                   <td>
-                      <a href="/controller?command=ban_comment&id=${comment.id}" class="btn btn-warning"><fmt:message key="button.ban"/></a>
+                      <a href="${pageContext.request.contextPath}/controller?command=ban_comment&id=${comment.id}" class="btn btn-warning"><fmt:message key="button.ban"/></a>
                   </td>
                 </tr>
             </c:forEach>
